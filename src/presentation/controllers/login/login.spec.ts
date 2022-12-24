@@ -1,9 +1,7 @@
-import { Authentication } from '../../../domain/usecases/authentication'
+import { LoginController } from './login'
 import { serverError, badRequest, unauthorized } from './../../helpers/http-helper'
 import { InvalidParamError, MissingParamError } from '../../errors'
-import { EmailValidator } from './../../protocols/email-validator'
-import { HttpRequest } from './../../protocols/http'
-import { LoginController } from './login'
+import { EmailValidator, Authentication, HttpRequest } from './login-protocols'
 
 const makeEmailValidor = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
